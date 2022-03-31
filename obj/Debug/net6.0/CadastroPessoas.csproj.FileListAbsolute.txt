@@ -1,0 +1,15 @@
+C:\Users\brup1\OneDrive\Área de Trabalho\codificaçao\SA2\CadastroPessoas\bin\Debug\net6.0\CadastroPessoas.exe
+C:\Users\brup1\OneDrive\Área de Trabalho\codificaçao\SA2\CadastroPessoas\bin\Debug\net6.0\CadastroPessoas.deps.json
+C:\Users\brup1\OneDrive\Área de Trabalho\codificaçao\SA2\CadastroPessoas\bin\Debug\net6.0\CadastroPessoas.runtimeconfig.json
+C:\Users\brup1\OneDrive\Área de Trabalho\codificaçao\SA2\CadastroPessoas\bin\Debug\net6.0\CadastroPessoas.dll
+C:\Users\brup1\OneDrive\Área de Trabalho\codificaçao\SA2\CadastroPessoas\bin\Debug\net6.0\CadastroPessoas.pdb
+C:\Users\brup1\OneDrive\Área de Trabalho\codificaçao\SA2\CadastroPessoas\obj\Debug\net6.0\CadastroPessoas.csproj.AssemblyReference.cache
+C:\Users\brup1\OneDrive\Área de Trabalho\codificaçao\SA2\CadastroPessoas\obj\Debug\net6.0\CadastroPessoas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\brup1\OneDrive\Área de Trabalho\codificaçao\SA2\CadastroPessoas\obj\Debug\net6.0\CadastroPessoas.AssemblyInfoInputs.cache
+C:\Users\brup1\OneDrive\Área de Trabalho\codificaçao\SA2\CadastroPessoas\obj\Debug\net6.0\CadastroPessoas.AssemblyInfo.cs
+C:\Users\brup1\OneDrive\Área de Trabalho\codificaçao\SA2\CadastroPessoas\obj\Debug\net6.0\CadastroPessoas.csproj.CoreCompileInputs.cache
+C:\Users\brup1\OneDrive\Área de Trabalho\codificaçao\SA2\CadastroPessoas\obj\Debug\net6.0\CadastroPessoas.dll
+C:\Users\brup1\OneDrive\Área de Trabalho\codificaçao\SA2\CadastroPessoas\obj\Debug\net6.0\refint\CadastroPessoas.dll
+C:\Users\brup1\OneDrive\Área de Trabalho\codificaçao\SA2\CadastroPessoas\obj\Debug\net6.0\CadastroPessoas.pdb
+C:\Users\brup1\OneDrive\Área de Trabalho\codificaçao\SA2\CadastroPessoas\obj\Debug\net6.0\CadastroPessoas.genruntimeconfig.cache
+C:\Users\brup1\OneDrive\Área de Trabalho\codificaçao\SA2\CadastroPessoas\obj\Debug\net6.0\ref\CadastroPessoas.dll
