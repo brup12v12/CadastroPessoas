@@ -2,9 +2,9 @@ namespace CadastroPessoas
 {
     public class PessoaJuridica : Pessoa
     {
-        public string cnpj { get; set; }
+        public string? cnpj { get; set; }
         
-        public string razaoSocial { get; set; }
+        public string? razaoSocial { get; set; }
 
         public override float PagarImposto(float rendimento)
         {
