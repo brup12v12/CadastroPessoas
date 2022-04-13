@@ -49,7 +49,7 @@ namespace CadastroPessoas
                         novaPf.nome = "Bruno";
                         novaPf.dataNascimento = new DateTime(2004, 09, 11);
                         novaPf.cpf = "1442681079";
-                        novaPf.rendimento = 3000.734f;
+                        novaPf.rendimento = 2500.0f;
 
                         novoEndPf.logradouro = "Rua Carlos Sherer";
                         novoEndPf.numero = 603;
@@ -61,7 +61,8 @@ namespace CadastroPessoas
                         Console.WriteLine(@$"
 Nome: {novaPf.nome}      
 CPF: {novaPf.cpf}     
-Endereço: {novaPf.endereco.logradouro}, {novoEndPf.numero}      
+Endereço: {novaPf.endereco.logradouro}, {novoEndPf.numero}
+Taxa adicional de imposto: {pfMetodo.PagarImposto(novaPf.rendimento).ToString("C")}     
 ");
 
                         Console.ForegroundColor = ConsoleColor.DarkBlue;
@@ -79,9 +80,9 @@ Endereço: {novaPf.endereco.logradouro}, {novoEndPf.numero}
                         Endereco novoEndPj = new Endereco();
 
                         novaPj.nome = "Nova pessoa Juridíca";
-                        novaPj.cnpj = "34567890000199";
+                        novaPj.cnpj = "34562890000199";
                         novaPj.razaoSocial = "Razão social nova Pessoa Juridica";
-                        novaPj.rendimento = 15000f;
+                        novaPj.rendimento = 8000.76f;
 
                         novoEndPj.logradouro = "Rua Carlos Sherer";
                         novoEndPj.numero = 603;
@@ -90,11 +91,14 @@ Endereço: {novaPf.endereco.logradouro}, {novoEndPf.numero}
 
                         novaPj.endereco = novoEndPj;
 
+                        //string cnpjValido = pjMetodos.ValidarCnpj(novaPj.cnpj) ? "Válido" : "Inválido";
+ 
                         Console.WriteLine(@$"
 Nome: {novaPj.nome}
 CNPJ:  {novaPj.cnpj}      
 Razão Social: {novaPj.razaoSocial}      
-CNPJ valido: {pjMetodos.ValidarCnpj(novaPj.cnpj)}  
+CNPJ valido: {(pjMetodos.ValidarCnpj(novaPj.cnpj) ? "Válido" : "Inválido")} 
+Taxa adicional de imposto: {pjMetodos.PagarImposto(novaPj.rendimento).ToString("C")} 
 ");
 
                         Console.ForegroundColor = ConsoleColor.DarkBlue;
@@ -116,7 +120,7 @@ CNPJ valido: {pjMetodos.ValidarCnpj(novaPj.cnpj)}
                         Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine($"Opção inválida, escolha uma das opções citadas anteriormente.");
                         Console.ResetColor();
-                        Thread.Sleep(5000);
+                        Thread.Sleep(3000);
                         Console.Clear();
                         break;
                 }
