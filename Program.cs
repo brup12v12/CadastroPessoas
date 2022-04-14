@@ -181,14 +181,18 @@ Taxa adicional de imposto: {pfMetodo.PagarImposto(item.rendimento).ToString("C")
                                         Thread.Sleep(3000);
                                     }
 
-                                    // // // using (StreamReader sr = new StreamReader($"(nome do arquivo que deseja ser lido)"))
-                                    // // // {
-                                    // // //     string linha;
-                                    // // //     while ((linha = sr.ReadLine()) != null)                                        
-                                    // // //     {
-                                    // // //      Console.WriteLine($"{linha}");                                         
-                                    // //     }
+
+
+                                    //                         CONTINUAÇÂO DA ATIVIDADE
+                                    // using (StreamReader sr = new StreamReader($"(nome do arquivo que deseja ser lido)"))
+                                    // {
+                                    //     string linha;
+                                    //     while ((linha = sr.ReadLine()) != null)                                        
+                                    //     {
+                                    //      Console.WriteLine($"{linha}");                                         
+                                    //     }
                                     // }
+
 
 
 
