@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading;
 
 namespace CadastroPessoas
 {
@@ -125,6 +128,22 @@ namespace CadastroPessoas
                                     novaPf.endereco = novoEndPf;
 
                                     listaPf.Add(novaPf);
+
+
+
+                                                 //ATIVIDADE TXT
+
+                                    // StreamWriter sw = new StreamWriter($"{novaPf.nome}.txt");
+                                    // sw.Write($"Nome: {novaPf.nome}");
+                                    // sw.Close();
+                                    
+                                
+                                    // using (StreamWriter sw = new StreamWriter($"{novaPf.nome}.txt"))
+                                    // {
+                                    //     sw.Write($"{novaPf.nome}");
+                                    // }
+                                
+
 
                                     Console.ForegroundColor = ConsoleColor.Green;
                                     Console.WriteLine($"Cadastro realizado com sucesso!");
@@ -269,7 +288,7 @@ Taxa adicional de imposto: {pfMetodo.PagarImposto(item.rendimento).ToString("C")
 
                                     novaPj.endereco = novoEndPj;
 
-                                    listaPj.Add(novaPj);
+                                    
 
                                     Console.ForegroundColor = ConsoleColor.Green;
                                     Console.WriteLine($"Cadastro realizado com sucesso!");
