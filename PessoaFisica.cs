@@ -30,7 +30,7 @@ namespace CadastroPessoas
                 taxa = (rendimento / 100) * 5;
                 return taxa;
             }
-
+            
         }
 
         public bool ValidarDataNascimento(DateTime dataNasc)
@@ -39,7 +39,7 @@ namespace CadastroPessoas
 
             double anos = (dataAtual - dataNasc).TotalDays / 365;
 
-            Console.WriteLine($"{anos}");
+            //Console.WriteLine($"{anos}");
 
             if (anos >= 18)
             {
@@ -48,5 +48,6 @@ namespace CadastroPessoas
             return false;
         }
 
+           
     }
 }
