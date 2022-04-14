@@ -131,19 +131,19 @@ namespace CadastroPessoas
 
 
 
-                                                 //ATIVIDADE TXT
+                                    //ATIVIDADE TXT
 
                                     // StreamWriter sw = new StreamWriter($"{novaPf.nome}.txt");
                                     // sw.Write($"Nome: {novaPf.nome}");
                                     // sw.Close();
-                                                        
-                                                        //OU:
-                                 
+
+                                    //OU:
+
                                     // using (StreamWriter sw = new StreamWriter($"{novaPf.nome}.txt"))
                                     // {
                                     //     sw.Write($"{novaPf.nome}");
                                     // }
-                                
+
 
 
                                     Console.ForegroundColor = ConsoleColor.Green;
@@ -180,6 +180,17 @@ Taxa adicional de imposto: {pfMetodo.PagarImposto(item.rendimento).ToString("C")
                                         Console.ResetColor();
                                         Thread.Sleep(3000);
                                     }
+
+                                    // // // using (StreamReader sr = new StreamReader($"(nome do arquivo que deseja ser lido)"))
+                                    // // // {
+                                    // // //     string linha;
+                                    // // //     while ((linha = sr.ReadLine()) != null)                                        
+                                    // // //     {
+                                    // // //      Console.WriteLine($"{linha}");                                         
+                                    // //     }
+                                    // }
+
+
 
                                     break;
 
@@ -289,7 +300,7 @@ Taxa adicional de imposto: {pfMetodo.PagarImposto(item.rendimento).ToString("C")
 
                                     novaPj.endereco = novoEndPj;
 
-                                    
+
 
                                     Console.ForegroundColor = ConsoleColor.Green;
                                     Console.WriteLine($"Cadastro realizado com sucesso!");
