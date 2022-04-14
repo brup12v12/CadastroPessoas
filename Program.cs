@@ -136,8 +136,9 @@ namespace CadastroPessoas
                                     // StreamWriter sw = new StreamWriter($"{novaPf.nome}.txt");
                                     // sw.Write($"Nome: {novaPf.nome}");
                                     // sw.Close();
-                                    
-                                
+                                                        
+                                                        //OU:
+                                 
                                     // using (StreamWriter sw = new StreamWriter($"{novaPf.nome}.txt"))
                                     // {
                                     //     sw.Write($"{novaPf.nome}");
