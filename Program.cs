@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Threading;
-
-namespace CadastroPessoas
+﻿namespace CadastroPessoas
 {
     class Program
     {
         static void Main(string[] args)
         {
             List<PessoaFisica> listaPf = new List<PessoaFisica>();
+
             List<PessoaJuridica> listaPj = new List<PessoaJuridica>();
+
 
             Console.Clear();
             Console.WriteLine(@$"
@@ -75,25 +72,25 @@ namespace CadastroPessoas
                                     Console.WriteLine($"Digite o nome da pessoa que deseja ser cadastrada:");
                                     novaPf.nome = Console.ReadLine();
 
-                                    bool dataValida;
-                                    do
-                                    {
-                                        Console.WriteLine($"Digite a data de nascimento Ex: AAAA-MM-DD");
-                                        DateTime dataNascimento = DateTime.Parse(Console.ReadLine());
+                                    // bool dataValida;
+                                    // do
+                                    // {
+                                    //     Console.WriteLine($"Digite a data de nascimento Ex: AAAA-MM-DD");
+                                    //     DateTime dataNascimento = DateTime.Parse(Console.ReadLine());
 
-                                        dataValida = pfMetodo.ValidarDataNascimento(dataNascimento);
+                                    //     dataValida = pfMetodo.ValidarDataNascimento(dataNascimento);
 
-                                        if (dataValida)
-                                        {
-                                            novaPf.dataNascimento = dataNascimento;
-                                        }
-                                        else
-                                        {
-                                            Console.ForegroundColor = ConsoleColor.Red;
-                                            Console.WriteLine($"Data inválida, por favor digite uma data válida(maior de 18 anos de idade)");
-                                            Console.ResetColor();
-                                        }
-                                    } while (dataValida == false);
+                                    //     if (dataValida)
+                                    //     {
+                                    //         novaPf.dataNascimento = dataNascimento;
+                                    //     }
+                                    //     else
+                                    //     {
+                                    //         Console.ForegroundColor = ConsoleColor.Red;
+                                    //         Console.WriteLine($"Data inválida, por favor digite uma data válida(maior de 18 anos de idade)");
+                                    //         Console.ResetColor();
+                                    //     }
+                                    // } while (dataValida == false);
 
 
                                     Console.WriteLine("Digite o CPF ");
@@ -103,29 +100,29 @@ namespace CadastroPessoas
                                     novaPf.rendimento = float.Parse(Console.ReadLine());
 
 
-                                    Console.WriteLine($"Digite o logradouro:");
-                                    novoEndPf.logradouro = Console.ReadLine();
+                                    // Console.WriteLine($"Digite o logradouro:");
+                                    // novoEndPf.logradouro = Console.ReadLine();
 
-                                    Console.WriteLine($"Digite o número do endereço:");
-                                    novoEndPf.numero = int.Parse(Console.ReadLine());
+                                    // Console.WriteLine($"Digite o número do endereço:");
+                                    // novoEndPf.numero = int.Parse(Console.ReadLine());
 
-                                    Console.WriteLine($"Digite o complemento(aperte ENTER para pular):");
-                                    novoEndPf.complemento = Console.ReadLine();
+                                    // Console.WriteLine($"Digite o complemento(aperte ENTER para pular):");
+                                    // novoEndPf.complemento = Console.ReadLine();
 
 
-                                    Console.WriteLine($"Este endereço é comercial? S/N ");
-                                    string enderecoComercial = Console.ReadLine().ToUpper();
+                                    // Console.WriteLine($"Este endereço é comercial? S/N ");
+                                    // string enderecoComercial = Console.ReadLine().ToUpper();
 
-                                    if (enderecoComercial == "S")
-                                    {
-                                        novoEndPf.enderecoComercial = true;
-                                    }
-                                    else
-                                    {
-                                        novoEndPf.enderecoComercial = false;
-                                    }
+                                    // if (enderecoComercial == "S")
+                                    // {
+                                    //     novoEndPf.enderecoComercial = true;
+                                    // }
+                                    // else
+                                    // {
+                                    //     novoEndPf.enderecoComercial = false;
+                                    // }
 
-                                    novaPf.endereco = novoEndPf;
+                                    // novaPf.endereco = novoEndPf;
 
                                     listaPf.Add(novaPf);
 
@@ -139,16 +136,24 @@ namespace CadastroPessoas
 
                                     //OU:
 
-                                    // using (StreamWriter sw = new StreamWriter($"{novaPf.nome}.txt"))
-                                    // {
-                                    //     sw.Write($"{novaPf.nome}");
-                                    // }
+                                    using (StreamWriter sw = new StreamWriter($"{novaPf.nome}.txt"))
+                                    {
+                                        sw.Write($"{novaPf.nome}");
+                                    }
 
+
+
+                                    Console.WriteLine($"Digite 'Enter' para continuar");
+                                    Console.ReadLine();
 
 
                                     Console.ForegroundColor = ConsoleColor.Green;
                                     Console.WriteLine($"Cadastro realizado com sucesso!");
                                     Console.ResetColor();
+
+                                    pfMetodo.VerificaPastaArquivo(pfMetodo.caminho);
+                                    pfMetodo.Inserir(novaPf);
+
 
                                     break;
 
@@ -156,30 +161,30 @@ namespace CadastroPessoas
 
                                     Console.Clear();
 
-                                    if (listaPf.Count > 0)
-                                    {
-                                        foreach (PessoaFisica item in listaPf)
-                                        {
-                                            Console.WriteLine(@$"
-Nome: {item.nome}      
-CPF: {item.cpf}     
-Endereço: {item.endereco?.logradouro}, {item.endereco?.numero}
-Taxa adicional de imposto: {pfMetodo.PagarImposto(item.rendimento).ToString("C")}     
-");
-                                        }
+                                    //                                     if (listaPf.Count > 0)
+                                    //                                     {
+                                    //                                         foreach (PessoaFisica item in listaPf)
+                                    //                                         {
+                                    //                                             Console.WriteLine(@$"
+                                    // Nome: {item.nome}      
+                                    // CPF: {item.cpf}     
+                                    // Endereço: {item.endereco?.logradouro}, {item.endereco?.numero}
+                                    // Taxa adicional de imposto: {pfMetodo.PagarImposto(item.rendimento).ToString("C")}     
+                                    // ");
+                                    //                                         }
 
-                                        Console.ForegroundColor = ConsoleColor.DarkBlue;
-                                        Console.WriteLine($"Pressione 'ENTER' para continuar.");
-                                        Console.ReadLine();
-                                        Console.ResetColor();
-                                    }
-                                    else
-                                    {
-                                        Console.ForegroundColor = ConsoleColor.DarkYellow;
-                                        Console.WriteLine($"Nenhuma pessoa cadastrada ainda!");
-                                        Console.ResetColor();
-                                        Thread.Sleep(3000);
-                                    }
+                                    //                                         Console.ForegroundColor = ConsoleColor.DarkBlue;
+                                    //                                         Console.WriteLine($"Pressione 'ENTER' para continuar.");
+                                    //                                         Console.ReadLine();
+                                    //                                         Console.ResetColor();
+                                    //                                     }
+                                    //                                     else
+                                    //                                     {
+                                    //                                         Console.ForegroundColor = ConsoleColor.DarkYellow;
+                                    //                                         Console.WriteLine($"Nenhuma pessoa cadastrada ainda!");
+                                    //                                         Console.ResetColor();
+                                    //                                         Thread.Sleep(3000);
+                                    //                                     }
 
 
 
@@ -193,8 +198,32 @@ Taxa adicional de imposto: {pfMetodo.PagarImposto(item.rendimento).ToString("C")
                                     //     }
                                     // }
 
+                                    // Console.WriteLine($"Digite ENTER para continuar");
+                                    // Console.ReadLine();
 
+                                    List<PessoaFisica> listaPF = pfMetodo.Ler();
 
+                                    if (listaPF.Count > 0)
+                                    {
+                                        foreach (PessoaFisica cadaPf in listaPF)
+                                        {
+
+                                            Console.WriteLine(@$"
+Nome: {cadaPf.nome}      
+CPF: {cadaPf.cpf}     
+Rendimento: {cadaPf.rendimento}    
+");
+
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine($"A lista está vazia!");
+
+                                    }
+
+                                    Console.WriteLine($"Digite ENTER para continuar");
+                                    Console.ReadLine();
 
                                     break;
 
@@ -204,8 +233,8 @@ Taxa adicional de imposto: {pfMetodo.PagarImposto(item.rendimento).ToString("C")
                                 default:
                                     Console.ForegroundColor = ConsoleColor.DarkRed;
                                     Console.WriteLine($"Opção inválida, escolha uma das opções citadas anteriormente.");
-                                    Thread.Sleep(3000);
                                     Console.ResetColor();
+                                    Thread.Sleep(3000);
                                     break;
                             }
                         } while (opcaoPf != "0");
@@ -221,13 +250,11 @@ Taxa adicional de imposto: {pfMetodo.PagarImposto(item.rendimento).ToString("C")
 
                     case "2":
 
-                        Console.Clear();
                         string? opcaoPj;
                         PessoaJuridica pjMetodos = new PessoaJuridica();
 
                         do
                         {
-
                             Console.ForegroundColor = ConsoleColor.Blue;
                             Console.WriteLine(@$"
 ======================================================
@@ -280,40 +307,47 @@ Taxa adicional de imposto: {pfMetodo.PagarImposto(item.rendimento).ToString("C")
                                     Console.WriteLine($"Digite a renda mensal da pessoa(apenas números):");
                                     novaPj.rendimento = float.Parse(Console.ReadLine());
 
-                                    Console.WriteLine($"Digite o logradouro:");
-                                    novoEndPj.logradouro = Console.ReadLine();
+                                    // Console.WriteLine($"Digite o logradouro:");
+                                    // novoEndPj.logradouro = Console.ReadLine();
 
-                                    Console.WriteLine($"Digite o número do endereço:");
-                                    novoEndPj.numero = int.Parse(Console.ReadLine());
+                                    // Console.WriteLine($"Digite o número do endereço:");
+                                    // novoEndPj.numero = int.Parse(Console.ReadLine());
 
-                                    Console.WriteLine($"Digite um complemento(Pressione 'ENTER' para pular):");
-                                    novoEndPj.complemento = Console.ReadLine();
-                                    ;
+                                    // Console.WriteLine($"Digite um complemento(Pressione 'ENTER' para pular):");
+                                    // novoEndPj.complemento = Console.ReadLine();
+                                    // ;
 
-                                    Console.WriteLine($"O endereço é comercial?: S/N");
-                                    string enderecoComercial = Console.ReadLine().ToUpper();
+                                    // Console.WriteLine($"O endereço é comercial?: S/N");
+                                    // string enderecoComercial = Console.ReadLine().ToUpper();
 
-                                    if (enderecoComercial == "S")
-                                    {
-                                        novoEndPj.enderecoComercial = true;
-                                    }
-                                    else
-                                    {
-                                        novoEndPj.enderecoComercial = false;
-                                    }
+                                    // if (enderecoComercial == "S")
+                                    // {
+                                    //     novoEndPj.enderecoComercial = true;
+                                    // }
+                                    // else
+                                    // {
+                                    //     novoEndPj.enderecoComercial = false;
+                                    // }
 
-                                    novaPj.endereco = novoEndPj;
+                                    // novaPj.endereco = novoEndPj;
 
-
+                                    listaPj.Add(novaPj);
 
                                     Console.ForegroundColor = ConsoleColor.Green;
                                     Console.WriteLine($"Cadastro realizado com sucesso!");
                                     Console.ResetColor();
 
 
+
+                                    pjMetodos.VerificaPastaArquivo(pjMetodos.caminho);
+                                    pjMetodos.Inserir(novaPj);
+
                                     break;
 
                                 case "2":
+
+                                    Console.Clear();
+
                                     if (listaPj.Count > 0)
                                     {
 
@@ -344,6 +378,29 @@ Taxa adicional de imposto: {pjMetodos.PagarImposto(cadaitem.rendimento).ToString
                                     }
 
 
+
+
+
+
+
+                                         List<PessoaJuridica> listPj = pjMetodos.Ler();
+
+                                    if (listPj.Count > 0)
+                                    {
+                                        foreach (PessoaJuridica cadaPj in listPj)
+                                        {
+                                            Console.WriteLine(@$"
+Nome : {cadaPj.nome}
+Razão Social : {cadaPj.razaoSocial}
+CNPJ : {cadaPj.cnpj}");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine($"Lista vazia!");
+
+                                    }
+
                                     break;
                                 case "0":
                                     break;
@@ -351,6 +408,7 @@ Taxa adicional de imposto: {pjMetodos.PagarImposto(cadaitem.rendimento).ToString
                                     Console.ForegroundColor = ConsoleColor.Red;
                                     Console.WriteLine($"Opcão inválida, por favor digite uma opção válida!");
                                     Console.ResetColor();
+
                                     break;
                             }
 
@@ -361,8 +419,9 @@ Taxa adicional de imposto: {pjMetodos.PagarImposto(cadaitem.rendimento).ToString
                         break;
 
                     case "0":
+
                         Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                        Console.WriteLine($"Obrigado pela prefêrencia!:)");
+                        Console.WriteLine($"Obrigado pela prefêrencia!");
                         Console.ResetColor();
 
                         BarraCarregamento("Finalizando ");
